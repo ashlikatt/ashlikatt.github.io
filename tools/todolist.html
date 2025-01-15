@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/ashlikatt.github.io/favicon.png?v=9" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		<link href="/ashlikatt.github.io/_app/immutable/assets/15.CR2ZFPDc.css" rel="stylesheet">
+		<link rel="modulepreload" href="/ashlikatt.github.io/_app/immutable/entry/start.BWEtWsq7.js">
+		<link rel="modulepreload" href="/ashlikatt.github.io/_app/immutable/chunks/entry.BnS_7Rvz.js">
+		<link rel="modulepreload" href="/ashlikatt.github.io/_app/immutable/chunks/scheduler.DrUr7rw5.js">
+		<link rel="modulepreload" href="/ashlikatt.github.io/_app/immutable/entry/app.BUPrcU_5.js">
+		<link rel="modulepreload" href="/ashlikatt.github.io/_app/immutable/chunks/index.BfAMNwJz.js">
+		<link rel="modulepreload" href="/ashlikatt.github.io/_app/immutable/nodes/0.B0W2P-hM.js">
+		<link rel="modulepreload" href="/ashlikatt.github.io/_app/immutable/nodes/15.DOevayrj.js">
+		<link rel="modulepreload" href="/ashlikatt.github.io/_app/immutable/chunks/globals.D0QH3NT1.js">
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">      <noscript class="svelte-wg7i4f" data-svelte-h="svelte-13c7gcs"><h1 class="fadein svelte-wg7i4f">JavaScript is disabled. This page requires JavaScript to run.</h1></noscript> <div class="wrapper svelte-wg7i4f"><div id="body" class="hidden svelte-wg7i4f"><p id="warning" class="svelte-wg7i4f" data-svelte-h="svelte-6oxmsn">Note: This page uses localStorage to remember your to-do information when you exit.<br class="svelte-wg7i4f">
+            This data is only stored locally on your computer, and will be lost if you clear browsing data!<br class="svelte-wg7i4f"><br class="svelte-wg7i4f">
+            Left Click to mark tasks as complete.<br class="svelte-wg7i4f">
+            Right Click to edit existing tasks.</p> <h1 class="fadein svelte-wg7i4f" id="title" data-svelte-h="svelte-18n3b7y">Your To-Do List:</h1> <div id="tasklist" class="svelte-wg7i4f" data-svelte-h="svelte-vglmm3"></div> <h1 id="emptytasklist" class="svelte-wg7i4f" data-svelte-h="svelte-14ak1v3">(No tasks to display)</h1>   <h1 id="newtask" class="svelte-wg7i4f" data-svelte-h="svelte-7zyhs9">Create New Task</h1>   <h1 id="settings" class="svelte-wg7i4f" data-svelte-h="svelte-t37j98">Settings</h1></div> <div id="newtaskpopup" class="hidden modal svelte-wg7i4f"><div class="popup svelte-wg7i4f"><h1 class="title svelte-wg7i4f" data-svelte-h="svelte-1pyj5n2">Create New Task:</h1> <button class="leftbutton svelte-wg7i4f" data-svelte-h="svelte-1mj3w9n">Cancel</button> <button class="rightbutton svelte-wg7i4f" id="createTaskButton" data-svelte-h="svelte-1tin3w0">Create</button> <div class="section svelte-wg7i4f" data-svelte-h="svelte-kgap2v"><h2 class="svelte-wg7i4f">Task Information</h2> <input id="inputTitle" class="clearOnClose svelte-wg7i4f" type="text" placeholder="Task title" autocomplete="off"> <input id="inputDescription" class="clearOnClose svelte-wg7i4f" type="text" placeholder="Task description (Optional)" autocomplete="off"></div> <div class="section svelte-wg7i4f" data-svelte-h="svelte-4umcdr"><h2 class="svelte-wg7i4f">Task Schedule</h2> <label class="container svelte-wg7i4f"><input id="inputDaily" class="defaultRadio svelte-wg7i4f" type="radio" checked name="schedule"> <span class="radio_background svelte-wg7i4f">Daily</span></label> <label class="container svelte-wg7i4f"><input id="inputOnce" class="radio svelte-wg7i4f" type="radio" name="schedule"> <span class="radio_background svelte-wg7i4f">Once</span></label></div> <div class="section svelte-wg7i4f" data-svelte-h="svelte-ug3mlv"><h2 class="svelte-wg7i4f">Color Group</h2> <label class="color-container svelte-wg7i4f"><input id="inputColorPurple" class="radio svelte-wg7i4f" type="radio" name="color" value="4"> <div class="color_background purple_button svelte-wg7i4f"></div></label> <label class="color-container svelte-wg7i4f"><input id="inputColorPink" class="radio svelte-wg7i4f" type="radio" name="color" value="3"> <div class="color_background pink_button svelte-wg7i4f"></div></label> <label class="color-container svelte-wg7i4f"><input id="inputColorGreen" class="radio svelte-wg7i4f" type="radio" name="color" value="2"> <div class="color_background green_button svelte-wg7i4f"></div></label> <label class="color-container svelte-wg7i4f"><input id="inputColorBlue" class="radio svelte-wg7i4f" type="radio" name="color" value="1"> <div class="color_background blue_button svelte-wg7i4f"></div></label> <label class="color-container svelte-wg7i4f"><input id="inputColorWhite" class="defaultRadio svelte-wg7i4f" type="radio" checked name="color" value="0"> <div class="color_background white_button svelte-wg7i4f"></div></label></div></div></div> <div id="edittaskpopup" class="hidden modal svelte-wg7i4f"><div class="popup svelte-wg7i4f"><h1 class="title svelte-wg7i4f" data-svelte-h="svelte-bqbduo">Edit Task:</h1> <button class="leftbutton svelte-wg7i4f" data-svelte-h="svelte-4h18o9">Cancel</button> <button class="rightbutton svelte-wg7i4f" data-svelte-h="svelte-1ogcmn0">Update</button> <div class="section svelte-wg7i4f" data-svelte-h="svelte-1rj70q7"><h2 class="svelte-wg7i4f">Task Information</h2> <input id="editTitle" class="clearOnClose svelte-wg7i4f" type="text" placeholder="Task title" autocomplete="off"> <input id="editDescription" class="clearOnClose svelte-wg7i4f" type="text" placeholder="Task description (Optional)" autocomplete="off"></div> <div class="section svelte-wg7i4f" data-svelte-h="svelte-1hw4npb"><h2 class="svelte-wg7i4f">Task Schedule</h2> <label class="container svelte-wg7i4f"><input id="editDaily" class="defaultRadio svelte-wg7i4f" type="radio" checked name="editschedule"> <span class="radio_background svelte-wg7i4f">Daily</span></label> <label class="container svelte-wg7i4f"><input id="editOnce" class="radio svelte-wg7i4f" type="radio" name="editschedule"> <span class="radio_background svelte-wg7i4f">Once</span></label></div> <div class="section svelte-wg7i4f" data-svelte-h="svelte-z40ui0"><h2 class="svelte-wg7i4f">Color Group</h2> <label class="color-container svelte-wg7i4f"><input id="editColorPurple" class="radio editcolor svelte-wg7i4f" type="radio" name="editcolor" value="4"> <div class="color_background purple_button svelte-wg7i4f"></div></label> <label class="color-container svelte-wg7i4f"><input id="editColorPink" class="radio editcolor svelte-wg7i4f" type="radio" name="editcolor" value="3"> <div class="color_background pink_button svelte-wg7i4f"></div></label> <label class="color-container svelte-wg7i4f"><input id="editColorGreen" class="radio editcolor svelte-wg7i4f" type="radio" name="editcolor" value="2"> <div class="color_background green_button svelte-wg7i4f"></div></label> <label class="color-container svelte-wg7i4f"><input id="editColorBlue" class="radio editcolor svelte-wg7i4f" type="radio" name="editcolor" value="1"> <div class="color_background blue_button svelte-wg7i4f"></div></label> <label class="color-container svelte-wg7i4f"><input id="editColorWhite" class="defaultRadio editcolor svelte-wg7i4f" type="radio" checked name="editcolor" value="0"> <div class="color_background white_button svelte-wg7i4f"></div></label></div> <button class="bottombutton svelte-wg7i4f" data-svelte-h="svelte-1ft0aw9">Delete</button></div></div> <div id="settingsbox" class="hidden modal svelte-wg7i4f"><div class="popup svelte-wg7i4f"><h1 class="title svelte-wg7i4f" data-svelte-h="svelte-4i0p6f">Settings and Preferences:</h1> <button class="leftbutton svelte-wg7i4f" data-svelte-h="svelte-7pix4d">Cancel</button> <button class="rightbutton svelte-wg7i4f" data-svelte-h="svelte-1nxuyn4">Update</button> <div class="section svelte-wg7i4f" data-svelte-h="svelte-x0mwzu"><h2 id="timezonedisplay" class="svelte-wg7i4f">Time Zone (UTC)</h2> <p class="svelte-wg7i4f">Daily tasks will automatically un-check themselves at 00:00 daily</p> <input id="settingUTCOffset" class="clearOnClose svelte-wg7i4f" type="range" min="-12" max="12" value="0" autocomplete="off"></div> <div class="section svelte-wg7i4f"><button class="svelte-wg7i4f" data-svelte-h="svelte-nzi2rv">Download Save Data</button> <button class="svelte-wg7i4f" data-svelte-h="svelte-1s1fchz">Upload Save Data</button></div></div></div> </div> 
+			
+			<script>
+				{
+					__sveltekit_yr5xqt = {
+						base: "/ashlikatt.github.io",
+						assets: "/ashlikatt.github.io"
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [null,null];
+
+					Promise.all([
+						import("/ashlikatt.github.io/_app/immutable/entry/start.BWEtWsq7.js"),
+						import("/ashlikatt.github.io/_app/immutable/entry/app.BUPrcU_5.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 15],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>

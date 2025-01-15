@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/ashlikatt.github.io/favicon.png?v=9" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		<link href="/ashlikatt.github.io/_app/immutable/assets/7.D1-jdT7l.css" rel="stylesheet">
+		<link href="/ashlikatt.github.io/_app/immutable/assets/pageData.Bqcz7sT_.css" rel="stylesheet">
+		<link href="/ashlikatt.github.io/_app/immutable/assets/paragraph.BBOoXGoF.css" rel="stylesheet">
+		<link href="/ashlikatt.github.io/_app/immutable/assets/deprecated_header.s5p_oBke.css" rel="stylesheet">
+		<link href="/ashlikatt.github.io/_app/immutable/assets/comment.DqVsIyul.css" rel="stylesheet">
+		<link href="/ashlikatt.github.io/_app/immutable/assets/externalLink.WrjCvC38.css" rel="stylesheet">
+		<link href="/ashlikatt.github.io/_app/immutable/assets/inlineCode.Dd09iQIl.css" rel="stylesheet">
+		<link href="/ashlikatt.github.io/_app/immutable/assets/section.ByyDdKVe.css" rel="stylesheet">
+		<link rel="modulepreload" href="/ashlikatt.github.io/_app/immutable/entry/start.BWEtWsq7.js">
+		<link rel="modulepreload" href="/ashlikatt.github.io/_app/immutable/chunks/entry.BnS_7Rvz.js">
+		<link rel="modulepreload" href="/ashlikatt.github.io/_app/immutable/chunks/scheduler.DrUr7rw5.js">
+		<link rel="modulepreload" href="/ashlikatt.github.io/_app/immutable/entry/app.BUPrcU_5.js">
+		<link rel="modulepreload" href="/ashlikatt.github.io/_app/immutable/chunks/index.BfAMNwJz.js">
+		<link rel="modulepreload" href="/ashlikatt.github.io/_app/immutable/nodes/0.B0W2P-hM.js">
+		<link rel="modulepreload" href="/ashlikatt.github.io/_app/immutable/nodes/7.Dy4pl9CA.js">
+		<link rel="modulepreload" href="/ashlikatt.github.io/_app/immutable/chunks/pageData.CqP318gz.js">
+		<link rel="modulepreload" href="/ashlikatt.github.io/_app/immutable/chunks/stores.RMM6F2xy.js">
+		<link rel="modulepreload" href="/ashlikatt.github.io/_app/immutable/chunks/paragraph.C2yhdLRw.js">
+		<link rel="modulepreload" href="/ashlikatt.github.io/_app/immutable/chunks/deprecated_header.C_sesCB6.js">
+		<link rel="modulepreload" href="/ashlikatt.github.io/_app/immutable/chunks/comment.Cdy7g4I7.js">
+		<link rel="modulepreload" href="/ashlikatt.github.io/_app/immutable/chunks/externalLink.DNJPPYHb.js">
+		<link rel="modulepreload" href="/ashlikatt.github.io/_app/immutable/chunks/inlineCode.BRCHcj98.js">
+		<link rel="modulepreload" href="/ashlikatt.github.io/_app/immutable/chunks/section.nWrM8mab.js"><title>DFON - Reference</title><!-- HEAD_svelte-1oxg7k6_START --><meta name="author" content="Ashli Katt"><meta property="og:url" content="/ashlikatt.github.io/langs/dfon/reference"><meta content="#FF8888" data-react-helmet="true" name="theme-color"><meta content="DFON - Reference" property="og:title"><meta content="Reference page for the DFON markup language." property="og:description"><!-- HEAD_svelte-1oxg7k6_END -->
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">   <div class="mainContainer svelte-1xap59o"><div class="body svelte-1xap59o"><div class="svelte-155zedd"><h1 title="No longer personally maintained." class="svelte-155zedd">DiamondFire Object Notation Reference</h1> <a href="/ashlikatt.github.io/langs/dfon" target="_self"><button class="svelte-19frktq">Back</button> </a> </div> <p class="svelte-1oawypm">DiamondFire Object Notation is a JSON-like language for constant data on DiamondFire plots. It is not a programming language.
+        DFON was created to streamline the production of games with large amounts of constant, read-only data. It may be helpful for things like weapon stats,
+        map regions, npc dialogue, etc.<br><br>
+
+        It is recommended to have an understanding of <a rel="noopener noreferrer" href="https://www.json.org/json-en.html" target="_blank" class="svelte-1o9ax33">JSON </a>
+        before using DFON, as they share many similarities. <span class="svelte-uigx5d">(I mean it!!)</span> </p> <h2 class="svelte-3vtbid">Basic Structure </h2> <p class="svelte-1oawypm">A DFON file uses the same rough structure as JSON. The file is one huge dictionary, which has 0 or more keys.
+        Those keys contain other values like lists, strings, numbers, nested dictionaries, etc.<br><br>
+
+        The outer-most dictionary is referred to as the &quot;main dictionary.&quot; When DFON is compiled, each entry in the main dictionary will become a global variable. 
+        <span class="svelte-uigx5d">(With the corresponding name and value)</span> <p class="svelte-1y4hdci">{
+        a: 0,
+        b: 1,
+        c: [1, 2, 3],
+    "key": "whatever",
+}
+ </p>
+
+        This will compile down into a code-line that sets the global variables <span class="svelte-1stm8uk">a</span>, <span class="svelte-1stm8uk">b</span>, 
+        <span class="svelte-1stm8uk">c</span>, and <span class="svelte-1stm8uk">key</span> to their respective values.<br><br>
+
+        Both strings and identifiers are allowed as keys for a dictionary, and trailing commas are allowed anywhere.<br>
+        Values will be covered in the following three sections. </p> <h2 class="svelte-3vtbid">Basic Primitive Types </h2> <p class="svelte-1oawypm">DFON has the common primitive value types from DiamondFire. This includes numbers, strings, text, locations, and vectors.<br>
+        Numbers, strings, and text are covered in this section. The rest are covered in the next section.<br><br>
+
+        Numbers are written in base-10, with or without a negative sign, and with or without a decimal place. 
+        A number&#39;s decimal place may go beyond 3 digits, unlike in DiamondFire - however the value will be truncated when compiling.
+        Numbers additionally can have underscores anywhere inside of them for readability<br><br>
+
+        Numbers may also be written in hex, octal, or binary using the <span class="svelte-1stm8uk">0x</span>, <span class="svelte-1stm8uk">0o</span>,
+        and <span class="svelte-1stm8uk">0b</span> prefixes. Numbers created this way do not support decimals.<br><br>
+
+        All of the following are valid numbers: <span class="svelte-1stm8uk">12</span>, <span class="svelte-1stm8uk">-12</span>, <span class="svelte-1stm8uk">12.52</span>,
+        <span class="svelte-1stm8uk">-1_000_000_000.002</span>, <span class="svelte-1stm8uk">0xFF_00_AA</span>, <span class="svelte-1stm8uk">-0b11101110</span>, <span class="svelte-1stm8uk">0o77</span>.<br><br> <br><br>
+
+        Strings are identical to JSON strings, except they can use either <span class="svelte-1stm8uk">&quot;</span>
+        or <span class="svelte-1stm8uk">&#39;</span> as a delimiter. Backslashes are used to escape characters.<br>
+        Text is created by placing <span class="svelte-1stm8uk">T</span> before string quotes.<br><br>
+
+        The following are valid strings: <span class="svelte-1stm8uk">&quot;&quot;</span>, <span class="svelte-1stm8uk">&quot;Hello, World!&quot;</span>, 
+        <span class="svelte-1stm8uk">&quot;String that has \na newline!&quot;</span><br>
+        The following are valid text: <span class="svelte-1stm8uk">T&quot;&quot;</span>, <span class="svelte-1stm8uk">T&quot;&lt;red&gt;Hello, player!&quot;</span>, 
+        <span class="svelte-1stm8uk">&quot;Text that has &lt;newline&gt;a newline!&quot;</span><br><br>
+
+        Remember that this is constant data! DiamondFire Codes like %default have no meaning. </p> <h2 class="svelte-3vtbid">Other Primitive Types </h2> <p class="svelte-1oawypm">Locations are written as 3 or 5 comma-separated numbers inside of parenthesis.<br><br>
+        Valid locations may look like: <span class="svelte-1stm8uk">(1, 2, 3)</span>, <span class="svelte-1stm8uk">(23.5, 50.5, 24.5, )</span>, or 
+        <span class="svelte-1stm8uk">(150.5, 200.5, 150.5, 0, 90, )</span>.<br><br><br><br>
+
+        Vectors are written as 3 comma-separated numbers inside of parenthesis.<br><br>
+        Valid vectors may look like: <span class="svelte-1stm8uk">&lt;2, 3, 4&gt;</span> or <span class="svelte-1stm8uk">&lt;1, 0.25, 0, &gt;</span>. </p> <h2 class="svelte-3vtbid">Compound Types </h2> <p class="svelte-1oawypm">DFON has the same two compound types as JSON, dictionaries and lists.<br>
+        
+        Lists are written as square brackets with zero or more comma-separated values inside. 
+        When compiled, they become a DiamondFire List value.<br><br>
+
+        Valid lists may look like <span class="svelte-1stm8uk">[]</span>, <span class="svelte-1stm8uk">[2]</span>, or 
+        <span class="svelte-1stm8uk">[&quot;a&quot;, 2, { a: 2 }, ]</span>.<br><br> <br><br>
+
+        Dictionaries are written as curly braces with zero or more comma-separated key-value pairs inside.
+        When compiled, they will become a DiamondFire Dictionary value. The main dictionary will compile differently than normal dictionary values, see above.<br><br>
+
+        Valid dictionaries may look like <span class="svelte-1stm8uk">{}</span>, <span class="svelte-1stm8uk">{ a: 2 }</span>, or
+        <span class="svelte-1stm8uk">{ a: 2, b: { c: 3 }, }</span>. </p> <h2 class="svelte-3vtbid">Documentation </h2> <p class="svelte-1oawypm">DFON Files may be documented with comments. The language supports both inline and block comments using traditional C-style comments.
+        Inline comments can be started with two slashes, block comments can be started with a slash-star, and ended with a star-slash.
+
+        <p class="svelte-1y4hdci">{
+   // This is here for blablabla
+   someVar: "whatever"
+
+   /* 
+       This next section is here for yada yada yada...
+       ... remember to blabla! 
+   */
+}
+ </p> </p> <h2 class="svelte-3vtbid">Macros </h2> <p class="svelte-1oawypm">Macros are where DFON strays away from mostly-normal JSON syntax. In any DFON file, any number of macros may be placed above the main dictionary.
+        Macros have a name, zero or more named parameters, and a result expression. Both the macro name and parameter names must be valid identifiers.<br><br>
+
+        Inside macros, parameter names can be used in place of regular values, which will be 
+        substituted with the argument supplied to the macro when it is invoked.
+
+        <p class="svelte-1y4hdci">macro justATwo() = 2
+
+macro pair(x, y) = [x, y]
+
+macro block(blockName, blockValue) = {
+    "blockName": blockName,
+    "miningSpeed": blockValue    
+}
+ </p>
+
+        Note that in the third macro definition, the <span class="svelte-1stm8uk">blockName</span> key must be written as a string. Otherwise DFON would
+        think that you&#39;re using the value of the <span class="svelte-1stm8uk">blockName</span> parameter as a dictionary key!<br><br>
+
+        Assuming these macro definitions are properly above the main dictionary, they can now be invoked in place of a regular value.
+        A macro can be invoked by writing its name followed by parenthesis, with comma-separated arguments between the parenthesis.<br><br>
+
+        With the above code, writing <span class="svelte-1stm8uk">justATwo()</span> would be the same as writing <span class="svelte-1stm8uk">2</span>.<br>
+        Writing <span class="svelte-1stm8uk">pair(1, 2)</span> would be the same as writing <span class="svelte-1stm8uk">[1, 2]</span>.<br> 
+        Finally, writing <span class="svelte-1stm8uk">block(&quot;stone&quot;, 12)</span> is identical to <span class="svelte-1stm8uk">{ blockName: &quot;stone&quot;, miningSpeed: 12 }</span><br><br>
+
+        Properly using macros can greatly reduce the size of DFON scripts, and improve readability. </p> <h2 class="svelte-3vtbid">Large Example </h2> <p class="svelte-1oawypm">Sometimes it&#39;s easier to read through a large example.
+
+        <p class="svelte-1y4hdci">/**
+ * Macro to generate block data.
+ * @param miningTime : number - The number of ticks to mine this block by hand
+ * @param pickaxePower : number - The minimum required pickaxe power to mine this block
+ * @param drops : string[] - List of item IDs this block can drop
+ */
+macro block(miningTime, pickaxePower, drops) = {
+    "miningTime": miningTime,
+    "pickaxePower": pickaxePower,
+    "drops": drops
+}
+
+
+
+// Holds all game data
+{
+
+    // Used for blockdata lookups
+    dirMap: {
+        east: &lt; 1,  0,  0>,
+        west: &lt;-1,  0,  0>,
+        north: &lt; 0,  0, -1>,
+        south: &lt; 0,  0,  1>,
+        up: &lt; 0,  1,  0>,
+        down: &lt; 0, -1,  0>,
+    },
+
+    // Stores mineable block information
+    blockData: {
+              'stone': block(40, 0, ['stone']),
+           'andesite': block(60, 1, ['stone', 'iron_scrap', 'none']),
+        'cobblestone': block(80, 2, ['stone', 'gold_scrap', 'none']),
+    },
+}
+ </p>
+
+        This code, when compiled, creates two global variables: <span class="svelte-1stm8uk">dirMap</span> and <span class="svelte-1stm8uk">blockData</span>. </p> <h2 class="svelte-3vtbid">Compilation </h2> <p class="svelte-1oawypm">Compiled DFON code will generate one process, and 0 or more functions. All generated templates need to be placed down to work.
+        You will need to manually call the process when the first player joins the plot, there is no need to manually call the functions. </p> <h2 class="svelte-3vtbid">Limits </h2> <p class="svelte-1oawypm">DFON isn&#39;t a good fit for every project. Using it means that any time you want to change data, you will need to edit the script,
+        recompile the code, and replace the templates. This is made even harder if multiple people are working on your plot.<br><br>
+
+        The main reasons to use DFON are to make constant data easier to read through and spot bugs with, as well as providing a sort of &quot;backup&quot; in case 
+        code is accidentally lost. Constant data is often more devastating to lose than a simple algorithm.<br><br>
+
+        Feel free to get in contact if you&#39;d like to suggest features or need help making your own PR.
+        I am still currently thinking about implementation for function hooks, embedded metadata, support for all DF datatypes, and support for items, among other things. </p></div> </div> 
+			
+			<script>
+				{
+					__sveltekit_yr5xqt = {
+						base: "/ashlikatt.github.io",
+						assets: "/ashlikatt.github.io"
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [null,null];
+
+					Promise.all([
+						import("/ashlikatt.github.io/_app/immutable/entry/start.BWEtWsq7.js"),
+						import("/ashlikatt.github.io/_app/immutable/entry/app.BUPrcU_5.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 7],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>
